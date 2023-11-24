@@ -1,0 +1,60 @@
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #12996e;
+  }
+
+  .navbar {
+    background-color: #5b7a99 !important;
+    color: aliceblue;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand img {
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+
+  .main {
+    background-color: #f0f8ff;
+    color: #000029;
+    padding: 20px;
+  }
+</style>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-logo-design-template-8703dac2fe7a46fbbc1cd27ea9be1dd7_screen.jpg?ts=1652725319" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+      <b>Restaurantes Internacionales</b>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="main">
+  <div class="container-fluid">
+    <app-restaurante></app-restaurante>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

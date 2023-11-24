@@ -1,0 +1,40 @@
+<div class="row">
+  <!-- Columna 1 -->
+  <div class="col mx-5">
+    <!-- Contenido -->
+    <div class="table-container" style="border-radius: 10px; overflow: hidden;">
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th style="text-align: center;">#</th>
+            <th style="text-align: center;">Nombre</th>
+            <th style="text-align: center;">País</th>
+            <th style="text-align: center;">Tipo de comida</th>
+            <th style="text-align: center;">Fundación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let object of objects" (click)="onSelected(object)" [class.selected]="object === selectedObject">
+            <td style="user-select: none; text-align: center;">{{object.id}}</td>
+            <td style="user-select: none; text-align: center;">{{object.name}}</td>
+            <td style="user-select: none; text-align: center;">{{object.country}}</td>
+            <td style="user-select: none; text-align: center;">{{object.cuisine}}</td>
+            <td style="user-select: none; text-align: center;">{{object.opening_year}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div *ngIf="bestObject">
+      <p>El restaurante con mejor puntuación es <strong>{{bestObject.name}}</strong> y tiene <strong>{{bestObject.rating}}</strong> puntos</p>
+    </div>
+  </div>
+
+  <!-- Columna 2 -->
+  <div class="col-3 mx-5" *ngIf="selectedObject">
+    <!-- Contenido -->
+    <app-detail [objectDetail]="selectedObject"></app-detail>
+  </div>
+</div>
